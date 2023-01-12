@@ -12,12 +12,18 @@ import RxRelay
 import FindTownCore
 
 protocol FavoriteViewModelType {
-    func goToAgreePolicy()
+    func goToAgreePolicy(_ signupUserModel: SignupUserModel)
 }
 
+// 수정
 struct JachiguDong {
     let jachigu: String
     let dong: String
+    
+    init(jachigu: String = "", dong: String = "") {
+        self.jachigu = jachigu
+        self.dong = dong
+    }
 }
 
 final class FavoriteViewModel: BaseViewModel {
@@ -27,7 +33,6 @@ final class FavoriteViewModel: BaseViewModel {
         let dong = BehaviorSubject<String>(value: "동")
         
         let jachiguDong = PublishSubject<JachiguDong>()
-        
         let nextButtonTrigger = PublishSubject<Void>()
     }
     
@@ -38,11 +43,14 @@ final class FavoriteViewModel: BaseViewModel {
     let input = Input()
     let output = Output()
     let delegate: SignupViewModelDelegate
+    var signupUserModel: SignupUserModel
     
     init(
-        delegate: SignupViewModelDelegate
+        delegate: SignupViewModelDelegate,
+        signupUserModel: SignupUserModel
     ) {
         self.delegate = delegate
+        self.signupUserModel = signupUserModel
         
         super.init()
         self.bind()
@@ -72,13 +80,14 @@ final class FavoriteViewModel: BaseViewModel {
         print("dong \(jachiguDong.dong)")
         
         // 2. after goToLocationAndYears
-        self.goToAgreePolicy()
+        signupUserModel.jachiguDong = jachiguDong
+        self.goToAgreePolicy(signupUserModel)
     }
 }
 
 extension FavoriteViewModel: FavoriteViewModelType {
     
-    func goToAgreePolicy() {
-        delegate.goToAgreePolicy()
+    func goToAgreePolicy(_ signupUserModel: SignupUserModel) {
+        delegate.goToAgreePolicy(signupUserModel)
     }
 }

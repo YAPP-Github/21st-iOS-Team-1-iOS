@@ -182,6 +182,6 @@ final class FavoriteViewController: BaseViewController {
     }
     
     @objc private func didTapSkipButton() {
-        viewModel?.goToAgreePolicy()
+        viewModel?.input.nextButtonTrigger.onNext(())
     }
 }

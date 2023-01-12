@@ -10,6 +10,7 @@ import CoreData
 import FindTownUI
 import FindTownCore
 import NMapsMap
+import KakaoSDKCommon
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // NaverMap API Set
         NMFAuthManager.shared().clientId = Bundle.main.NAVER_MAP_KEY
+        
+        // KAKAO SDK Set
+        KakaoSDK.initSDK(appKey: Bundle.main.KAKAO_NATIVE_APP_KEY)
         
         return true
     }
@@ -85,4 +89,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-

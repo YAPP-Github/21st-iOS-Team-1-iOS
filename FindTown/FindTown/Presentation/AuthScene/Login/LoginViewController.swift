@@ -9,6 +9,7 @@ import UIKit
 
 import FindTownCore
 import FindTownUI
+import KakaoSDKUser
 import RxCocoa
 import RxSwift
 
@@ -34,7 +35,7 @@ final class LoginViewController: BaseViewController {
         var configuration = UIButton.Configuration.filled()
         configuration.title = "카카오로 시작하기"
         configuration.image = UIImage(named: "KakaoIcon")
-        configuration.baseBackgroundColor = .init(red: 254, green: 229, blue: 0, alpha: 1)
+        configuration.baseBackgroundColor = #colorLiteral(red: 0.9983025193, green: 0.9065476656, blue: 0, alpha: 1)
         configuration.baseForegroundColor = FindTownColor.black.color
         configuration.imagePadding = 9
         configuration.attributedTitle?.font = FindTownFont.body1.font
@@ -141,24 +142,23 @@ final class LoginViewController: BaseViewController {
         kakaoButton.rx.tap
             .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
             .bind { [weak self] in
-                // 임시
-                self?.viewModel?.goToNickname()
+                self?.viewModel?.input.kakaoSigninTrigger.onNext(())
             }
             .disposed(by: disposeBag)
         
         /// apple 로그인
         appleButton.rx.tap
             .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
-            .bind {
-                
+            .bind { [weak self] in
+                self?.viewModel?.input.appleSigninTrigger.onNext(())
             }
             .disposed(by: disposeBag)
         
         /// 둘러보기
         anonymousTitleTapGesture.rx.event
             .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
-            .bind { _ in
-                
+            .bind { [weak self] _ in
+                self?.viewModel?.input.anonymousTrigger.onNext(())
             }
             .disposed(by: disposeBag)
         

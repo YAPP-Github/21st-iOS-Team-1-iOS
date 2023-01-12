@@ -12,14 +12,20 @@ import RxSwift
 import RxRelay
 
 protocol LocationAndYearsViewModelType {
-    func goToTownMood()
+    func goToTownMood(_ signupUserModel: SignupUserModel)
 }
 
-// 추후 수정
-struct DongYearMonthModel {
+// 수정
+struct DongYearMonth {
     let dong: String
     let year: Int
     let month: Int
+    
+    init(dong: String = "", year: Int = 0, month: Int = 0) {
+        self.dong = dong
+        self.year = year
+        self.month = month
+    }
 }
 
 final class LocationAndYearsViewModel: BaseViewModel {
@@ -29,8 +35,8 @@ final class LocationAndYearsViewModel: BaseViewModel {
         let year = BehaviorSubject<Int>(value: 0)
         let month = BehaviorSubject<Int>(value: 1)
         
-        let dongYearMonth = BehaviorSubject<DongYearMonthModel>(
-            value: DongYearMonthModel(dong: "", year: 0, month: 1)
+        let dongYearMonth = BehaviorSubject<DongYearMonth>(
+            value: DongYearMonth(dong: "", year: 0, month: 1)
         )
         
         let nextButtonTrigger = PublishSubject<Void>()
@@ -43,11 +49,14 @@ final class LocationAndYearsViewModel: BaseViewModel {
     let input = Input()
     let output = Output()
     let delegate: SignupViewModelDelegate
+    var signupUserModel: SignupUserModel
     
     init(
-        delegate: SignupViewModelDelegate
+        delegate: SignupViewModelDelegate,
+        signupUserModel: SignupUserModel
     ) {
         self.delegate = delegate
+        self.signupUserModel = signupUserModel
         
         super.init()
         self.bind()
@@ -63,13 +72,13 @@ final class LocationAndYearsViewModel: BaseViewModel {
         Observable.combineLatest(input.dong, input.year, input.month)
             .bind { [weak self] (dong, year, month) in
                 self?.output.nextButtonEnabled.accept(true)
-                let model = DongYearMonthModel(dong: dong, year: year, month: month)
+                let model = DongYearMonth(dong: dong, year: year, month: month)
                 self?.input.dongYearMonth.onNext(model)
             }
             .disposed(by: disposeBag)
     }
     
-    private func setDongYearMonth(dongYearMonth: DongYearMonthModel) {
+    private func setDongYearMonth(dongYearMonth: DongYearMonth) {
         // 1. dongYearMonth 임시로 set
         print("dongYearMonth \(dongYearMonth)")
         
@@ -77,14 +86,15 @@ final class LocationAndYearsViewModel: BaseViewModel {
             self.output.nextButtonEnabled.accept(false)
         } else {
             // 2. after goToTwonMood
-            self.goToTownMood()
+            signupUserModel.dongYearMonth = dongYearMonth
+            self.goToTownMood(signupUserModel)
         }
     }
 }
 
 extension LocationAndYearsViewModel: LocationAndYearsViewModelType {
     
-    func goToTownMood() {
-        delegate.goToTownMood()
+    func goToTownMood(_ signupUserModel: SignupUserModel) {
+        delegate.goToTownMood(signupUserModel)
     }
 }

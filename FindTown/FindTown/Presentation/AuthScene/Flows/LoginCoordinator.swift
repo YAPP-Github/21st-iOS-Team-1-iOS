@@ -1,8 +1,8 @@
 //
-//  LoginCoordinator.swift
-//  FindTown
+//  LoginCoordinator.swift
+//  FindTown
 //
-//  Created by 김성훈 on 2023/01/06.
+//  Created by 김성훈 on 2022/12/29.
 //
 
 import UIKit
@@ -18,9 +18,10 @@ final class LoginCoordinator: FlowCoordinator {
         self.presentationStyle = presentationStyle
     }
     
-    /// 로그인 화면
     internal func initScene() -> UIViewController {
-        let loginViewModel = LoginViewModel(delegate: self)
+        let loginViewModel = LoginViewModel(delegate: self,
+                                            userDefaults: UserDefaultUtil(),
+                                            kakaoManager: KakaoSigninManager())
         let loginViewController = LoginViewController(viewModel: loginViewModel)
         return loginViewController
     }
@@ -28,15 +29,14 @@ final class LoginCoordinator: FlowCoordinator {
 
 extension LoginCoordinator: LoginViewModelDelegate {
     
-    func goToNickname() {
-        guard let navigationController = navigationController else { return }
-        navigationController.isNavigationBarHidden = false
-        SignupCoordinator(presentationStyle: .push(navigationController: navigationController)).start()
-    }
-    
     func goToTabBar() {
         guard let navigationController = navigationController else { return }
         navigationController.isNavigationBarHidden = true
         TabBarCoordinator(presentationStyle: .push(navigationController: navigationController)).start()
+    }
+    
+    func goToNickname() {
+        guard let navigationController = navigationController else { return }
+        SignupCoordinator(presentationStyle: .push(navigationController: navigationController)).start()
     }
 }

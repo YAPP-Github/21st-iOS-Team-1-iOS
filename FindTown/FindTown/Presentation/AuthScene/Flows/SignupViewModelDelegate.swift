@@ -8,9 +8,9 @@
 import Foundation
 
 protocol SignupViewModelDelegate {
-    func goToLocationAndYears()
-    func goToTownMood()
-    func goToFavorite()
-    func goToAgreePolicy()
+    func goToLocationAndYears(_ signupUserModel: SignupUserModel)
+    func goToTownMood(_ signupUserModel: SignupUserModel)
+    func goToFavorite(_ signupUserModel: SignupUserModel)
+    func goToAgreePolicy(_ signupUserModel: SignupUserModel)
     func goToTabBar()
 }

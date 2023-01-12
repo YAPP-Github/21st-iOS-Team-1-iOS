@@ -26,29 +26,29 @@ final class SignupCoordinator: FlowCoordinator {
     }
     
     /// 회원가입 첫번째 정보입력 화면 (위치, 몇년 거주)
-    internal func signUpInputLocationAndYearsScene() -> UIViewController {
-        let locationAndYearsViewModel = LocationAndYearsViewModel(delegate: self)
+    internal func signUpInputLocationAndYearsScene(_ signupUserModel: SignupUserModel) -> UIViewController {
+        let locationAndYearsViewModel = LocationAndYearsViewModel(delegate: self, signupUserModel: signupUserModel)
         let locationAndYearsViewController = LocationAndYearsViewController(viewModel: locationAndYearsViewModel)
         return locationAndYearsViewController
     }
     
     /// 회원가입 두번째 정보입력 화면 (동네 분위기)
-    internal func signUpInputTownMoodScene() -> UIViewController {
-        let townMoodViewModel = TownMoodViewModel(delegate: self)
+    internal func signUpInputTownMoodScene(_ signupUserModel: SignupUserModel) -> UIViewController {
+        let townMoodViewModel = TownMoodViewModel(delegate: self, signupUserModel: signupUserModel)
         let townMoodViewController = TownMoodViewController(viewModel: townMoodViewModel)
         return townMoodViewController
     }
     
     /// 회원가입 관심 있는 동네
-    internal func signUpFavoriteTownScene() -> UIViewController {
-        let favoriteTownViewModel = FavoriteViewModel(delegate: self)
+    internal func signUpFavoriteTownScene(_ signupUserModel: SignupUserModel) -> UIViewController {
+        let favoriteTownViewModel = FavoriteViewModel(delegate: self, signupUserModel: signupUserModel)
         let favoriteTownViewController = FavoriteViewController(viewModel: favoriteTownViewModel)
         return favoriteTownViewController
     }
     
     /// 이용약관
-    internal func signUpAgreePolicyScene() -> UIViewController {
-        let agreePolicyViewModel = AgreePolicyViewModel(delegate: self)
+    internal func signUpAgreePolicyScene(_ signupUserModel: SignupUserModel) -> UIViewController {
+        let agreePolicyViewModel = AgreePolicyViewModel(delegate: self, signupUserModel: signupUserModel)
         let agreePolicyViewController = AgreePolicyViewController(viewModel: agreePolicyViewModel)
         agreePolicyViewController.modalPresentationStyle = .overFullScreen
         return agreePolicyViewController
@@ -57,25 +57,25 @@ final class SignupCoordinator: FlowCoordinator {
 
 extension SignupCoordinator: SignupViewModelDelegate {
     
-    func goToLocationAndYears() {
+    func goToLocationAndYears(_ signupUserModel: SignupUserModel) {
         guard let navigationController = navigationController else { return }
         navigationController.isNavigationBarHidden = false
-        navigationController.pushViewController(signUpInputLocationAndYearsScene(), animated: true)
+        navigationController.pushViewController(signUpInputLocationAndYearsScene(signupUserModel), animated: true)
     }
     
-    func goToTownMood() {
+    func goToTownMood(_ signupUserModel: SignupUserModel) {
         guard let navigationController = navigationController else { return }
-        navigationController.pushViewController(signUpInputTownMoodScene(), animated: true)
+        navigationController.pushViewController(signUpInputTownMoodScene(signupUserModel), animated: true)
     }
     
-    func goToFavorite() {
+    func goToFavorite(_ signupUserModel: SignupUserModel) {
         guard let navigationController = navigationController else { return }
-        navigationController.pushViewController(signUpFavoriteTownScene(), animated: true)
+        navigationController.pushViewController(signUpFavoriteTownScene(signupUserModel), animated: true)
     }
     
-    func goToAgreePolicy() {
+    func goToAgreePolicy(_ signupUserModel: SignupUserModel) {
         guard let navigationController = navigationController else { return }
-        navigationController.present(signUpAgreePolicyScene(), animated: false)
+        navigationController.present(signUpAgreePolicyScene(signupUserModel), animated: false)
     }
     
     func goToTabBar() {

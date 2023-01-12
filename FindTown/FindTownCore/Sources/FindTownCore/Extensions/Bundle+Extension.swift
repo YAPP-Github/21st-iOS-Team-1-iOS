@@ -16,4 +16,12 @@ extension Bundle {
         
         return key
     }
+    
+    public var KAKAO_NATIVE_APP_KEY: String {
+        guard let file = self.path(forResource: "APIKeyInfo", ofType: "plist") else { return "" }
+        guard let resource = NSDictionary(contentsOfFile: file) else { return "" }
+        guard let key = resource["KakaoNativeAppKey"] as? String else { fatalError("KakaoNativeAppKey error") }
+        
+        return key
+    }
 }

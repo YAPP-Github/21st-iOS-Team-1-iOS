@@ -9,6 +9,18 @@
 /* Begin PBXBuildFile section */
 		2B718C182966A5930068884A /* MapCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B718C172966A5930068884A /* MapCategoryCollectionViewCell.swift */; };
 		2B718C1A2966A6000068884A /* MapCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B718C192966A6000068884A /* MapCategory.swift */; };
+		BC04A6CA296FB8B200B60BCF /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BC04A6C9296FB8B200B60BCF /* KakaoSDKAuth */; };
+		BC04A6CC296FB8B200B60BCF /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = BC04A6CB296FB8B200B60BCF /* KakaoSDKCommon */; };
+		BC04A6CE296FB8B200B60BCF /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = BC04A6CD296FB8B200B60BCF /* KakaoSDKUser */; };
+		BC04A6D0296FB9BF00B60BCF /* APIKeyInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC04A6CF296FB9BF00B60BCF /* APIKeyInfo.plist */; };
+		BC04A6D4296FBC5C00B60BCF /* SigninManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC04A6D3296FBC5C00B60BCF /* SigninManagerProtocol.swift */; };
+		BC04A6D6296FBC6F00B60BCF /* KakaoSigninManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC04A6D5296FBC6F00B60BCF /* KakaoSigninManager.swift */; };
+		BC04A6D9296FBC8E00B60BCF /* UserDefaultUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC04A6D8296FBC8E00B60BCF /* UserDefaultUtil.swift */; };
+		BC04A6DC296FDEC100B60BCF /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC04A6DB296FDEC100B60BCF /* KeyChainManager.swift */; };
+		BC04A6DE296FF10100B60BCF /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC04A6DD296FF10100B60BCF /* TokenManager.swift */; };
+		BC04A6E029700BD700B60BCF /* AppleSigninManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC04A6DF29700BD700B60BCF /* AppleSigninManager.swift */; };
+		BC04A6E329700DF400B60BCF /* KeyChainAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC04A6E229700DF400B60BCF /* KeyChainAccount.swift */; };
+		BC04A6E529700E1400B60BCF /* KeyChainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC04A6E429700E1400B60BCF /* KeyChainError.swift */; };
 		BC056C562962B29F00EDCA18 /* SignupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC056C552962B29F00EDCA18 /* SignupCoordinator.swift */; };
 		BC056C5A2962B2B900EDCA18 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC056C592962B2B900EDCA18 /* LoginViewModel.swift */; };
 		BC056C5C2962B2C400EDCA18 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC056C5B2962B2C400EDCA18 /* LoginViewController.swift */; };
@@ -35,7 +47,6 @@
 		F31A80C82949A5BB003B8A6E /* FindTownCore in Frameworks */ = {isa = PBXBuildFile; productRef = F31A80C72949A5BB003B8A6E /* FindTownCore */; };
 		F31A80CA2949A5BB003B8A6E /* FindTownNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = F31A80C92949A5BB003B8A6E /* FindTownNetwork */; };
 		F31A80CC2949A5BB003B8A6E /* FindTownUI in Frameworks */ = {isa = PBXBuildFile; productRef = F31A80CB2949A5BB003B8A6E /* FindTownUI */; };
-		F3219B5B29693F12000024E4 /* APIKeyInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3219B5A29693F12000024E4 /* APIKeyInfo.plist */; };
 		F3219B5E2969403F000024E4 /* MapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3219B5D2969403F000024E4 /* MapData.swift */; };
 		F3219B602969407A000024E4 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3219B5F29694079000024E4 /* Category.swift */; };
 		F3219B622969408C000024E4 /* DetailCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3219B612969408C000024E4 /* DetailCategory.swift */; };
@@ -96,6 +107,15 @@
 /* Begin PBXFileReference section */
 		2B718C172966A5930068884A /* MapCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		2B718C192966A6000068884A /* MapCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCategory.swift; sourceTree = "<group>"; };
+		BC04A6CF296FB9BF00B60BCF /* APIKeyInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = APIKeyInfo.plist; path = ../../../../../../Downloads/APIKeyInfo.plist; sourceTree = "<group>"; };
+		BC04A6D3296FBC5C00B60BCF /* SigninManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninManagerProtocol.swift; sourceTree = "<group>"; };
+		BC04A6D5296FBC6F00B60BCF /* KakaoSigninManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoSigninManager.swift; sourceTree = "<group>"; };
+		BC04A6D8296FBC8E00B60BCF /* UserDefaultUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultUtil.swift; sourceTree = "<group>"; };
+		BC04A6DB296FDEC100B60BCF /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
+		BC04A6DD296FF10100B60BCF /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
+		BC04A6DF29700BD700B60BCF /* AppleSigninManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSigninManager.swift; sourceTree = "<group>"; };
+		BC04A6E229700DF400B60BCF /* KeyChainAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainAccount.swift; sourceTree = "<group>"; };
+		BC04A6E429700E1400B60BCF /* KeyChainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainError.swift; sourceTree = "<group>"; };
 		BC056C552962B29F00EDCA18 /* SignupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCoordinator.swift; sourceTree = "<group>"; };
 		BC056C592962B2B900EDCA18 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		BC056C5B2962B2C400EDCA18 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -117,7 +137,6 @@
 		F31A80C32949A556003B8A6E /* FindTownUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FindTownUI; sourceTree = "<group>"; };
 		F31A80C42949A568003B8A6E /* FindTownCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FindTownCore; sourceTree = "<group>"; };
 		F31A80C52949A577003B8A6E /* FindTownNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FindTownNetwork; sourceTree = "<group>"; };
-		F3219B5A29693F12000024E4 /* APIKeyInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = APIKeyInfo.plist; sourceTree = "<group>"; };
 		F3219B5D2969403F000024E4 /* MapData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapData.swift; sourceTree = "<group>"; };
 		F3219B5F29694079000024E4 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F3219B612969408C000024E4 /* DetailCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCategory.swift; sourceTree = "<group>"; };
@@ -168,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F31A80CA2949A5BB003B8A6E /* FindTownNetwork in Frameworks */,
+				BC04A6CE296FB8B200B60BCF /* KakaoSDKUser in Frameworks */,
 				BC6EFB83293BD12300AB3332 /* RxSwift in Frameworks */,
 				F31A80C82949A5BB003B8A6E /* FindTownCore in Frameworks */,
 				BC6EFB86293BD15A00AB3332 /* RxDataSources in Frameworks */,
@@ -175,6 +195,8 @@
 				BC99019C295F09720051CC9B /* NMapsMap in Frameworks */,
 				BC6EFB81293BD12300AB3332 /* RxRelay in Frameworks */,
 				BC6EFB7F293BD12300AB3332 /* RxCocoa in Frameworks */,
+				BC04A6CC296FB8B200B60BCF /* KakaoSDKCommon in Frameworks */,
+				BC04A6CA296FB8B200B60BCF /* KakaoSDKAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +217,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC04A6D1296FBC3900B60BCF /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				BC04A6D3296FBC5C00B60BCF /* SigninManagerProtocol.swift */,
+				BC04A6D5296FBC6F00B60BCF /* KakaoSigninManager.swift */,
+				BC04A6DF29700BD700B60BCF /* AppleSigninManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		BC04A6D7296FBC7900B60BCF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BC04A6D8296FBC8E00B60BCF /* UserDefaultUtil.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		BC04A6DA296FDE9900B60BCF /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				BC04A6E129700DD700B60BCF /* KeyChain */,
+				BC04A6DD296FF10100B60BCF /* TokenManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		BC04A6E129700DD700B60BCF /* KeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				BC04A6DB296FDEC100B60BCF /* KeyChainManager.swift */,
+				BC04A6E229700DF400B60BCF /* KeyChainAccount.swift */,
+				BC04A6E429700E1400B60BCF /* KeyChainError.swift */,
+			);
+			path = KeyChain;
+			sourceTree = "<group>";
+		};
 		BC056C512962B03B00EDCA18 /* AuthScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +337,7 @@
 		BC6EFB74293B9C3400AB3332 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				BC04A6DA296FDE9900B60BCF /* Manager */,
 				F3219B5C29693FB2000024E4 /* Entities */,
 			);
 			path = Domain;
@@ -286,6 +346,7 @@
 		BC6EFB75293B9C3800AB3332 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				BC04A6D7296FBC7900B60BCF /* Utils */,
 				BC056C512962B03B00EDCA18 /* AuthScene */,
 				F38CCBD92958287C000C16AF /* HomeScene */,
 				F38CCBE229582881000C16AF /* MapScene */,
@@ -305,8 +366,8 @@
 		BC6EFB7A293BA31D00AB3332 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				F3219B5A29693F12000024E4 /* APIKeyInfo.plist */,
 				F3891E2A293B8394003CE8AD /* Assets.xcassets */,
+				BC04A6CF296FB9BF00B60BCF /* APIKeyInfo.plist */,
 				F3891E2F293B8394003CE8AD /* Info.plist */,
 				F3891E2C293B8394003CE8AD /* LaunchScreen.storyboard */,
 			);
@@ -408,6 +469,7 @@
 		F3891E1D293B8393003CE8AD /* FindTown */ = {
 			isa = PBXGroup;
 			children = (
+				BC04A6D1296FBC3900B60BCF /* Manager */,
 				BC6EFB7A293BA31D00AB3332 /* Resource */,
 				BC6EFB75293B9C3800AB3332 /* Presentation */,
 				BC6EFB74293B9C3400AB3332 /* Domain */,
@@ -533,6 +595,9 @@
 				F31A80C92949A5BB003B8A6E /* FindTownNetwork */,
 				F31A80CB2949A5BB003B8A6E /* FindTownUI */,
 				BC99019B295F09720051CC9B /* NMapsMap */,
+				BC04A6C9296FB8B200B60BCF /* KakaoSDKAuth */,
+				BC04A6CB296FB8B200B60BCF /* KakaoSDKCommon */,
+				BC04A6CD296FB8B200B60BCF /* KakaoSDKUser */,
 			);
 			productName = FindTown;
 			productReference = F3891E1B293B8393003CE8AD /* FindTown.app */;
@@ -614,6 +679,7 @@
 				BC6EFB7D293BD12300AB3332 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				BC6EFB84293BD15A00AB3332 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 				BC99019A295F09720051CC9B /* XCRemoteSwiftPackageReference "NMapsMap-SPM" */,
+				BC04A6C8296FB8B200B60BCF /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
 			);
 			productRefGroup = F3891E1C293B8393003CE8AD /* Products */;
 			projectDirPath = "";
@@ -632,7 +698,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3891E2E293B8394003CE8AD /* LaunchScreen.storyboard in Resources */,
-				F3219B5B29693F12000024E4 /* APIKeyInfo.plist in Resources */,
+				BC04A6D0296FB9BF00B60BCF /* APIKeyInfo.plist in Resources */,
 				F3891E2B293B8394003CE8AD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -659,16 +725,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				F39EDDCC296D7A1800A4E655 /* CategoryCollectionView.swift in Sources */,
+				BC04A6E329700DF400B60BCF /* KeyChainAccount.swift in Sources */,
 				BC0D88592964641400CCB800 /* YearMonthPickerView.swift in Sources */,
 				F3219B7C2969D589000024E4 /* AddressSheetViewModel.swift in Sources */,
 				BC056C5E2962B2CF00EDCA18 /* NicknameViewModel.swift in Sources */,
+				BC04A6DC296FDEC100B60BCF /* KeyChainManager.swift in Sources */,
 				F38CCBD729582869000C16AF /* AppCoordinator.swift in Sources */,
+				BC04A6E529700E1400B60BCF /* KeyChainError.swift in Sources */,
 				BC056C602962B2D900EDCA18 /* NicknameViewController.swift in Sources */,
 				F38CCBE929582881000C16AF /* MapViewModel.swift in Sources */,
+				BC04A6E029700BD700B60BCF /* AppleSigninManager.swift in Sources */,
 				F39EDDBC296D5AE500A4E655 /* City.swift in Sources */,
+				BC04A6DE296FF10100B60BCF /* TokenManager.swift in Sources */,
 				F39EDDD0296D7BBF00A4E655 /* StoreCollectionView.swift in Sources */,
 				F39EDDC8296D748200A4E655 /* CityCollectionView.swift in Sources */,
 				F38CCBEA29582881000C16AF /* MapCoordinator.swift in Sources */,
+				BC04A6D4296FBC5C00B60BCF /* SigninManagerProtocol.swift in Sources */,
 				F39EDDC2296D635100A4E655 /* CityType.swift in Sources */,
 				BCE814F62967DAF200A6E3CB /* LoginCoordinator.swift in Sources */,
 				BC9F4D5E296BF0C90099473C /* AgreePolicyViewController.swift in Sources */,
@@ -691,6 +763,7 @@
 				BC9E86522966821C00AB4AE7 /* SignupViewModelDelegate.swift in Sources */,
 				F38CCBE829582881000C16AF /* MapViewController.swift in Sources */,
 				2B718C182966A5930068884A /* MapCategoryCollectionViewCell.swift in Sources */,
+				BC04A6D9296FBC8E00B60BCF /* UserDefaultUtil.swift in Sources */,
 				F38CCBD829582869000C16AF /* TabBarCoordinator.swift in Sources */,
 				F3219B692969432C000024E4 /* MapDetailComponentView.swift in Sources */,
 				F3219B7A2969D53D000024E4 /* AddressSheetCoordinator.swift in Sources */,
@@ -710,6 +783,7 @@
 				F3891E21293B8393003CE8AD /* SceneDelegate.swift in Sources */,
 				F39EDDC4296D667800A4E655 /* County.swift in Sources */,
 				F3219B742969B351000024E4 /* StoreDetailType.swift in Sources */,
+				BC04A6D6296FBC6F00B60BCF /* KakaoSigninManager.swift in Sources */,
 				F39EDDCA296D788800A4E655 /* CityCollectionViewFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -879,13 +953,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CADXU3X8JU;
+				DEVELOPMENT_TEAM = F92UQYH2RA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FindTown/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -907,13 +982,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CADXU3X8JU;
+				DEVELOPMENT_TEAM = F92UQYH2RA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FindTown/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1046,6 +1122,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BC04A6C8296FB8B200B60BCF /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		BC6EFB7D293BD12300AB3332 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
@@ -1073,6 +1157,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BC04A6C9296FB8B200B60BCF /* KakaoSDKAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC04A6C8296FB8B200B60BCF /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKAuth;
+		};
+		BC04A6CB296FB8B200B60BCF /* KakaoSDKCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC04A6C8296FB8B200B60BCF /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKCommon;
+		};
+		BC04A6CD296FB8B200B60BCF /* KakaoSDKUser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC04A6C8296FB8B200B60BCF /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKUser;
+		};
 		BC6EFB7E293BD12300AB3332 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BC6EFB7D293BD12300AB3332 /* XCRemoteSwiftPackageReference "RxSwift" */;

@@ -34,11 +34,14 @@ final class AgreePolicyViewModel: BaseViewModel {
     let input = Input()
     let output = Output()
     let delegate: SignupViewModelDelegate
+    let signupUserModel: SignupUserModel
     
     init(
-        delegate: SignupViewModelDelegate
+        delegate: SignupViewModelDelegate,
+        signupUserModel: SignupUserModel
     ) {
         self.delegate = delegate
+        self.signupUserModel = signupUserModel
         
         super.init()
         self.bind()
@@ -57,7 +60,7 @@ final class AgreePolicyViewModel: BaseViewModel {
         self.input.confirmButtonTrigger
             .bind(onNext: self.goToTabBar)
             .disposed(by: disposeBag)
-            
+        
         Observable.combineLatest(input.policy, input.personalInfo)
             .map { (policy, personalInfo) in
                 return policy && personalInfo
@@ -72,6 +75,7 @@ final class AgreePolicyViewModel: BaseViewModel {
 extension AgreePolicyViewModel: AgreePolicyViewModelType {
     
     func goToTabBar() {
+        print("signupUserModel \(signupUserModel)")
         delegate.goToTabBar()
     }
 }
